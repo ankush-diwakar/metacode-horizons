@@ -1,3 +1,19 @@
+// function to send mail using emailjs
+const sendMail = (e) => {
+    const parameters = {
+        from_name: document.getElementById('name').value,
+        from_email: document.getElementById('email').value,
+        from_subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+
+    emailjs.send('service_4empam9', 'template_2bnevcq', parameters).then((res) => {
+        alert('Your mail has been sent successfully ' + res.status);
+    })
+}
+
+
+
 (function ($) {
     "use strict";
 
@@ -10,8 +26,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -24,8 +40,8 @@
             $('.navbar').removeClass('sticky-top shadow-sm');
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -35,7 +51,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -45,7 +61,7 @@
         $('.progress .progress-bar').each(function () {
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
-    }, {offset: '80%'});
+    }, { offset: '80%' });
 
 
     // Facts counter
@@ -62,17 +78,17 @@
         margin: 25,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="bi bi-chevron-left"></i>',
             '<i class="bi bi-chevron-right"></i>'
         ],
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            992:{
-                items:2
+            992: {
+                items: 2
             }
         }
     });
@@ -87,8 +103,8 @@
         $("#portfolio-flters li").removeClass('active');
         $(this).addClass('active');
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        portfolioIsotope.isotope({ filter: $(this).data('filter') });
     });
-    
+
 })(jQuery);
 

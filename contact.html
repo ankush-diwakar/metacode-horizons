@@ -58,11 +58,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Internships</a>
                         <a href="faq.html" class="nav-item nav-link">FAQ's</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link active">Contact</a>
 
                     </div>
                     <a href="/service.html" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
@@ -96,7 +96,7 @@
                         <div class="wow fadeInUp" data-wow-delay="0.3s">
                             <p class="text-center mb-4">We’re here to assist you! Reach out via our contact form, email,
                                 or phone, and we'll respond promptly to your inquiries and support needs.</p>
-                            <form action="/">
+                            <form action="">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
@@ -127,7 +127,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button class="btn btn-primary w-100 py-3" onclick=sendMail() type="submit">Send
+                                            Message</button>
                                     </div>
                                 </div>
                             </form>
@@ -135,6 +136,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Custom Alert Box -->
+        <div id="customAlert" class="custom-alert">
+            <span class="closebtn" onclick=closeAlert()>&times;</span>
+            <strong>Success!</strong> Your message has been sent.
         </div>
         <!-- Contact End -->
 
@@ -201,7 +208,8 @@
 
 
         <!-- Back to Top -->
-        <a href="/contact.html" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="/contact.html" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i
+                class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -217,6 +225,15 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "irg6T7_ZlGbS8VJOW",
+            });
+        })();
+    </script>
 </body>
 
 </html>
