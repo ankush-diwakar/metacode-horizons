@@ -1,12 +1,12 @@
 // function to send mail using emailjs
-const sendMail = (e) => {
+const sendMail = () => {
     const parameters = {
         from_name: document.getElementById('name').value,
         from_email: document.getElementById('email').value,
         from_subject: document.getElementById('subject').value,
         message: document.getElementById('message').value
     };
-
+    console.log(parameters);
     emailjs.send('service_4empam9', 'template_2bnevcq', parameters).then((res) => {
         alert('Your mail has been sent successfully ' + res.status);
     })
